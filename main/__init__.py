@@ -1,5 +1,8 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask,Blueprint,request
+import MySQLdb as SQL
 
 app = Flask(__name__)
-db = SQLAlchemy(app)
+
+db = SQL.connect(host="localhost",user="shantam",passwd="password",db="Project1")
+
+cursor = db.cursor()
