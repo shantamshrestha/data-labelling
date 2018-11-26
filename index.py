@@ -1,16 +1,8 @@
-from flask import Flask
+from main import app
 
-app = Flask(__name__)
 # app.config['HOST'] = '0.0.0.0'
-
-@app.route('/')
-# @app.route('/home')
-def hello():
-    return "Hello"
-
-@app.route('/home')
-def home():
-    return "Home"
+app.config['SQLALCHEMY_DATABASE_URI'] = mysql://root:password@localhost/Project1
+db = SQLAlchemy(app)
 
 if __name__ == '__main__':
     app.run(debug=True)
