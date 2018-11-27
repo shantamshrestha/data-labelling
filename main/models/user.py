@@ -1,7 +1,12 @@
-from main import db
+from main.models.db import conn
 
-class User(db.model):
-    __tablename__ = 'Users'
-    id = db.Column('id',db.Interger, primary_key = True)
-    username = db.Column('username',db.String)
-    password = db.Column('password',db.String)
+cursor = conn.cursor()
+
+def login(username,password):
+    cmd = "SELECT ID FROM Users WHERE USERNAME = '%s' and PASSWORD = '%s'" % (username,password)
+    cursor.execute(cmd)
+    id = cursor.fetchone()
+    if not id:
+        return id
+    else:
+        return None

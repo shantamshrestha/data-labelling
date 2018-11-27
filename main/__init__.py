@@ -1,8 +1,8 @@
 from flask import Flask,Blueprint,request
 import MySQLdb as SQL
-
+import jwt
 app = Flask(__name__)
 
-db = SQL.connect(host="localhost",user="shantam",passwd="password",db="Project1")
+from main.controller import login
 
-cursor = db.cursor()
+app.register_blueprint(login.auth)
