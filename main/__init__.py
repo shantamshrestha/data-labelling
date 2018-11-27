@@ -3,6 +3,6 @@ import MySQLdb as SQL
 import jwt
 app = Flask(__name__)
 
-from main.controller import login
+from main.controller.login import auth
 
-app.register_blueprint(login.auth)
+app.register_blueprint(auth)

@@ -6,7 +6,7 @@ def login(username,password):
     cmd = "SELECT ID FROM Users WHERE USERNAME = '%s' and PASSWORD = '%s'" % (username,password)
     cursor.execute(cmd)
     id = cursor.fetchone()
-    if not id:
-        return id
+    if id:
+        return id[0]
     else:
         return None
