@@ -13,7 +13,9 @@ def c_login():
 
     if not id:
         return "Invalid username or password"
-    return "%s" % id
+    token = jwt.encode({'user_id':id},app.config['SECRET_KEY'])
+
+    return "%s" % token,200
 
 @auth.route('/home')
 def home():
