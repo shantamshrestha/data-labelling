@@ -1,25 +1,26 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <title>Data Labeling</title>
+            <title>Data Labeling</title>
     </head>
     
     <body>
         <script src='script.js'></script>
-        <h1 style="text-align: center">Data Labeling</h1>
-        <div>
-            <table>
+        <script src='jquery-3.3.1.min.js'></script>
+        <div class='header'><h1 style="text-align: center">Data Labeling</h1></div>
+        <div class='table'>
+            <table id='login'>
                 <tr>
-                    <td>Username</td>
-                    <td><input type="text"></td>
+                    <td>Username:</td>
+                    <td><input id ="username" type="text"></td>
                 </tr>
                 <tr>
-                    <td>Password</td>
-                    <td><input type="password"></td>
+                    <td>Password:</td>
+                    <td><input id="password" type="password"></td>
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
-                        <input type="button" value="Login" onclick={}>
+                        <input type="button" value="Login" onclick=Login()>
                     </td>
                 </tr>
             </table>
