@@ -1,10 +1,14 @@
-alert("this")
+// alert("Here")
 function Login(){
-        var data = {
+    alert("here")
+    var email = $('#username').text();
+    var password = $('#password').text();
+    alert("Her asdasde");
+    $.post("http://127.0.0.1:5000/auth/",
+        {
             "email":"Shantam",
             "password":"password"
-        };
-    $.post("http://127.0.0.1:5000/auth/",data,
+        },
         function(data,status){
             alert("Data: " +  data + "\nStatus" + status);
         });

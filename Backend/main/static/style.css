@@ -1,0 +1,32 @@
+h1 {
+    color : white;
+}
+
+.header {
+    background-color: mediumseagreen;
+    text-align: center;
+    border-radius: 5px;
+
+}
+
+.table {
+    align-content: center;
+    border-radius: 5px;
+    /* padding-top: 30px; */
+    /* padding-left: 500px; */
+    padding-bottom: 50px;
+    align-self: center;
+    background-color: dodgerblue;
+    min-width: 300px;
+    width:30%;
+    margin:0 auto;
+    text-decoration-color: rgb(218, 106, 27);
+}
+
+#login {
+    margin:0 auto;
+    padding-top: 10%;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+}

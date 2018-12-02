@@ -3,6 +3,9 @@ from main.models.user import login
 
 auth = Blueprint('Auth',__name__,url_prefix='/auth')
 
+# @auth.route('/',methods=['GET'])
+# def home():
+#     return "Hello"
 
 @auth.route('/',methods=['POST'])
 def c_login():
@@ -17,6 +20,6 @@ def c_login():
 
     return "%s" % token,200
 
-@auth.route('/home')
+@auth.route('/home/')
 def home():
-    return "Home"
+    return render_template("index.html")
