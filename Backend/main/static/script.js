@@ -1,21 +1,27 @@
 // alert("Here")
+var url = 'http://127.0.0.1:5000'
 function Login(){
-    alert("here")
-    var email = $('#username').text();
-    var password = $('#password').text();
-    alert("Her asdasde");
-    $.post("http://127.0.0.1:5000/auth/",
-        {
-            "email":"Shantam",
-            "password":"password"
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    var d = {
+        username: username,
+        password : password,
+    }
+    $.ajax({
+        type: 'POST',
+        url:  url +'/auth/',
+        data: JSON.stringify(d), // or JSON.stringify ({name: 'jonas'}),
+        success: function(data) {
+            console.log(data); 
+            localStorage.setItem('token',data)
+            window.location.replace(url+'/main/');
+         },
+        error : function(data,textStatus) { console.log(textStatus);
+                alert('response: ' + data.responseText); 
         },
-        function(data,status){
-            alert("Data: " +  data + "\nStatus" + status);
-        });
-    // $.get('http://127.0.0.1:5000/auth/home/',
-    //     function(data,status){
-    //         alert(data);
-    //     }
-    // )
+        contentType: "application/json",
+        // dataType: 'json'
+    });
+
 }
 

@@ -10,10 +10,6 @@ from main.controller.login import auth
 
 app.register_blueprint(auth)
 
-@app.route('/')
-def main():
-    return "here"
-
-@app.route("/home")
+@app.route("/")
 def h():
     return render_template('index.html')

@@ -10,14 +10,17 @@ auth = Blueprint('Auth',__name__,url_prefix='/auth')
 @auth.route('/',methods=['POST'])
 def c_login():
     data = request.json
+    # print(data)
     username = data['username']
     password = data['password']
     id = login(username,password)
 
     if not id:
-        return "Invalid username or password"
+        print("here")
+        return "Invalid username or password",400
     token = jwt.encode({'user_id':id},app.config['SECRET_KEY'])
 
+    print(token)
     return "%s" % token,200
 
 @auth.route('/home/')
